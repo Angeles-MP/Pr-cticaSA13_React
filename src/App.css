@@ -1,0 +1,201 @@
+/* Estilos generales y fondo */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 2rem 1rem;
+}
+
+/* Contenedor principal (Formulario a la izquierda, Lista a la derecha) */
+.app-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Estilos del Formulario */
+.form-card {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.form-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #111827;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+/* Contenedor de Tarjetas (Grid responsivo) */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Estilo individual de cada Tarjeta */
+.user-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.badge-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge-status.inactivo {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-body p strong {
+  color: #1f2937;
+}
+
+/* Botones de acción en la tarjeta */
+.card-actions {
+  display: flex;
+  gap: 0.6rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-edit {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.85;
+}
+
+.msg-eliminando {
+  font-size: 0.8rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 850px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+}
